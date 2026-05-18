@@ -1,16 +1,15 @@
 """
-Phase 2 Metabolic Recovery — 30-Day Doctor-Facing Demo  (v4)
+Phase 2 Metabolic Recovery — 30-Day Doctor-Facing Demo
 =============================================================
 Recipes are generated STRICTLY from KG evidence-backed ingredients.
 Single patient with multiple adherence profiles.
-No biomarker trajectory (computed at Day 30 lab checkpoint, not simulated).
 Safety-driven fallback: safety triggers → basic recovery → step up when clear.
 """
 import streamlit as st
 import math, hashlib, random
 from copy import deepcopy
 
-st.set_page_config(page_title="30-Day Recovery Plan", layout="wide", page_icon="🧬")
+st.set_page_config(page_title="Metabolic Recovery Plan", layout="wide", page_icon="🧬")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # DATA LAYER
@@ -585,7 +584,7 @@ if "adh_profile" not in st.session_state: st.session_state.adh_profile = "well"
 patient = DEMO_PATIENT
 patient_id = patient["patient_id"]
 
-st.markdown("# 🧬 30-Day Personalised Recovery Plan")
+st.markdown("# 🧬 30-Day Personalized Metabolic Recovery Plan")
 st.caption("Post-operative metabolic recovery — AI-generated, physician-reviewed, patient-personalised.")
 
 # ─── Sidebar ──────────────────────────────────────────────────────────────────
@@ -654,7 +653,7 @@ st.markdown(", ".join(parts))
 
 # ─── 2. Doctor's goals ───────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("### 🎯 Doctor's Biomarker Goals")
+st.markdown("### 🎯 Doctor's Biomarker Targets")
 st.caption(f"_Targeted plan: **{PLAN_DISPLAY[intended_action]}**_"
            + (" — ⚠️ _currently in safety fallback_" if safety["high_safety_risk"] else ""))
 
@@ -681,7 +680,7 @@ for i, (bio, (lo, hi, norm)) in enumerate(safety_bios.items()):
 
 # ─── 3. 30-Day Calendar ──────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("### 📅 30-Day Overview")
+st.markdown("### 📅 30-Day Adherence Overview")
 
 adh_map_val = {0: 0.80, 1: 0.40, 2: 0.05}
 adh_icons = {0: "✅", 1: "🟡", 2: "🔴"}
@@ -791,7 +790,7 @@ st.caption("**Physician rules applied:** " + " · ".join(rule_notes))
 # ─── 8. Key evidence ingredients ──────────────────────────────────────────────
 st.markdown("---")
 st.markdown("### 🧪 Key Evidence Ingredients")
-st.caption("_All daily recipes (Day 1–30) are built strictly from these KG-backed ingredients. "
+st.caption("_All daily recipes (Day 1–30) are built strictly from these KG-backed (Nutrition Vs. Biomarker Dataset) ingredients. "
            "Each ingredient is linked to a specific biomarker target through published evidence._")
 
 if active_action == 0:
@@ -834,8 +833,7 @@ daily_meals = generate_daily_recipe(active_action, patient, day, doctor_targets,
 
 st.markdown("---")
 st.markdown(f"### 🍽️ Today's Meals — Day {day}")
-st.caption(f"_Every ingredient below is drawn from the evidence pool above. "
-           f"Ingredients rotate daily — each of the 30 days gets a unique meal plan._")
+st.caption(f"_Every ingredient below is drawn from the evidence pool above.")
 
 for meal in daily_meals:
     with st.expander(f"**{meal['time']}** — {meal['name']}", expanded=(meal['time'] in ['Breakfast', 'Lunch', 'Dinner'])):
