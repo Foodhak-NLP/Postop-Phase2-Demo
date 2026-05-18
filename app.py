@@ -707,7 +707,7 @@ st.markdown("""
         </tr>
     </table>
     <div style="margin-top:0.4rem; color: #666;">
-        Reviews are calculated at weekly checkpoints: Day 7, Day 14, and Day 21.
+        Reviews are calculated at weekly checkpoints: **Day 7, Day 14, and Day 21**. At the end of **Day 30**, new biomarker results are expected, and CQL reruns to select the next action from the updated action space.
     </div>
 </div>
 """, unsafe_allow_html=True)
