@@ -727,7 +727,7 @@ for week_num in range(1, 6):
     ws = (week_num-1)*7+1; we = min(week_num*7, 30)
     if ws > 30: break
     cols = st.columns(we - ws + 2)
-    with cols[0]: st.markdown(f"**Wk {week_num}**")
+    with cols[0]: st.markdown(f"**Week {week_num}**")
     for i, d in enumerate(range(ws, we+1)):
         with cols[i+1]:
             idx = st.session_state.daily_adherence.get(f"adh_{patient_id}_{d}", 0)
