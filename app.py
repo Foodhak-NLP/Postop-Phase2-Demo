@@ -706,8 +706,10 @@ st.markdown("""
             <td style="padding:0.25rem 0;">Step up to <strong>Targeted Recovery</strong>, only if currently in Basic Recovery and safety is clear</td>
         </tr>
     </table>
-    <div style="margin-top:0.4rem; color: #666;">
-        Reviews are calculated at weekly checkpoints: **Day 7, Day 14, and Day 21**. At the end of **Day 30**, new biomarker results are expected, and CQL reruns to select the next action from the updated action space.
+
+    <div style="margin-top:0.5rem; color:#666; line-height:1.4;">
+        Reviews are calculated at weekly checkpoints: <strong>Day 7, Day 14, and Day 21</strong>.
+        At the end of <strong>Day 30</strong>, new biomarker results are expected, and CQL reruns to select the next action from the updated action space.
     </div>
 </div>
 """, unsafe_allow_html=True)
