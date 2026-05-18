@@ -680,7 +680,16 @@ for i, (bio, (lo, hi, norm)) in enumerate(safety_bios.items()):
 
 # ─── 3. 30-Day Calendar ──────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("### 📅 30-Day Adherence Overview")
+st.markdown("### 📅 30-Day Adherence Overview with Weekly Checks")
+
+st.markdown("""
+<small>
+<strong>Weekly adherence logic:</strong><br>
+&lt; 55% adherence → step down to <strong>Basic Recovery</strong><br>
+55%–79% adherence → continue the current/basic plan<br>
+≥ 80% adherence → step up to <strong>Targeted Recovery</strong>, but only if currently in Basic Recovery and safety is clear
+</small>
+""", unsafe_allow_html=True)
 
 adh_map_val = {0: 0.80, 1: 0.40, 2: 0.05}
 adh_icons = {0: "✅", 1: "🟡", 2: "🔴"}
