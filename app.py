@@ -685,29 +685,38 @@ st.markdown("### 📅 30-Day Adherence Overview with Weekly Checks")
 st.markdown("""
 <div style="
     font-size: 0.86rem;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
     border-radius: 0.6rem;
     background-color: rgba(49, 51, 63, 0.06);
     border-left: 4px solid #6c63ff;
     margin-bottom: 1rem;
+    line-height: 1.45;
 ">
-    <strong>Weekly adherence logic</strong>
-    <table style="width:100%; margin-top:0.5rem; border-collapse: collapse;">
-        <tr>
-            <td style="padding:0.25rem 0;"><strong>&lt; 55%</strong></td>
-            <td style="padding:0.25rem 0;">Step down to <strong>Basic Recovery</strong></td>
-        </tr>
-        <tr>
-            <td style="padding:0.25rem 0;"><strong>55%–79%</strong></td>
-            <td style="padding:0.25rem 0;">Continue the current/basic plan</td>
-        </tr>
-        <tr>
-            <td style="padding:0.25rem 0;"><strong>≥ 80%</strong></td>
-            <td style="padding:0.25rem 0;">Step up to <strong>Targeted Recovery</strong>, only if currently in Basic Recovery and safety is clear</td>
-        </tr>
-    </table>
+    <div style="font-weight: 700; margin-bottom: 0.5rem;">
+        Weekly adherence logic
+    </div>
 
-    <div style="margin-top:0.5rem; color:#666; line-height:1.4;">
+    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.25rem;">
+        <div style="min-width: 80px; font-weight: 700;">&lt; 55%</div>
+        <div>Step down to <strong>Basic Recovery</strong></div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.25rem;">
+        <div style="min-width: 80px; font-weight: 700;">55%–79%</div>
+        <div>Continue the current/basic plan</div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem; margin-bottom: 0.6rem;">
+        <div style="min-width: 80px; font-weight: 700;">≥ 80%</div>
+        <div>Step up to <strong>Targeted Recovery</strong>, only if currently in Basic Recovery and safety is clear</div>
+    </div>
+
+    <div style="
+        margin-top: 0.65rem;
+        padding-top: 0.55rem;
+        border-top: 1px solid rgba(49, 51, 63, 0.12);
+        opacity: 0.78;
+    ">
         Reviews are calculated at weekly checkpoints: <strong>Day 7, Day 14, and Day 21</strong>.
         At the end of <strong>Day 30</strong>, new biomarker results are expected, and CQL reruns to select the next action from the updated action space.
     </div>
