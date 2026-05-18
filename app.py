@@ -683,12 +683,33 @@ st.markdown("---")
 st.markdown("### 📅 30-Day Adherence Overview with Weekly Checks")
 
 st.markdown("""
-<small>
-<strong>Weekly adherence logic:</strong><br>
-&lt; 55% adherence → step down to <strong>Basic Recovery</strong><br>
-55%–79% adherence → continue the current/basic plan<br>
-≥ 80% adherence → step up to <strong>Targeted Recovery</strong>, but only if currently in Basic Recovery and safety is clear
-</small>
+<div style="
+    font-size: 0.86rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.6rem;
+    background-color: rgba(49, 51, 63, 0.06);
+    border-left: 4px solid #6c63ff;
+    margin-bottom: 1rem;
+">
+    <strong>Weekly adherence logic [Calculated on day 7, 14, and 21]</strong>
+    <table style="width:100%; margin-top:0.5rem; border-collapse: collapse;">
+        <tr>
+            <td style="padding:0.25rem 0;"><strong>&lt; 55%</strong></td>
+            <td style="padding:0.25rem 0;">Step down to <strong>Basic Recovery</strong></td>
+        </tr>
+        <tr>
+            <td style="padding:0.25rem 0;"><strong>55%–79%</strong></td>
+            <td style="padding:0.25rem 0;">Continue the current/basic plan</td>
+        </tr>
+        <tr>
+            <td style="padding:0.25rem 0;"><strong>≥ 80%</strong></td>
+            <td style="padding:0.25rem 0;">Step up to <strong>Targeted Recovery</strong>, only if currently in Basic Recovery and safety is clear</td>
+        </tr>
+    </table>
+    <div style="margin-top:0.4rem; color: #666;">
+        Reviews are calculated at the end of each weekly checkpoint.
+    </div>
+</div>
 """, unsafe_allow_html=True)
 
 adh_map_val = {0: 0.80, 1: 0.40, 2: 0.05}
