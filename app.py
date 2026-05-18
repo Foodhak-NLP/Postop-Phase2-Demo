@@ -691,7 +691,7 @@ st.markdown("""
     border-left: 4px solid #6c63ff;
     margin-bottom: 1rem;
 ">
-    <strong>Weekly adherence logic [Calculated on day 7, 14, and 21]</strong>
+    <strong>Weekly adherence logic</strong>
     <table style="width:100%; margin-top:0.5rem; border-collapse: collapse;">
         <tr>
             <td style="padding:0.25rem 0;"><strong>&lt; 55%</strong></td>
@@ -707,7 +707,7 @@ st.markdown("""
         </tr>
     </table>
     <div style="margin-top:0.4rem; color: #666;">
-        Reviews are calculated at the end of each weekly checkpoint.
+        Reviews are calculated at weekly checkpoints: Day 7, Day 14, and Day 21.
     </div>
 </div>
 """, unsafe_allow_html=True)
